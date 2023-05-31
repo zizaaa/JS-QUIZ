@@ -1,31 +1,31 @@
 const dynastyReign = [
     {
         name: "San Dynasty",
-        year: "MXLI",
+        year: "MXLI", //1041
     },
     {
         name: "Viloria Dynasty",
-        year: "MCCCIIII",
+        year: "MCCCIIII", //Invalid
     },
     {
         name: "Tan Dynasty",
-        year: "MCCCXCVIII",
+        year: "MCCCXCVIII", //1398
     },
     {
         name: "Bon Dynasty",
-        year: "MCDXLV",
+        year: "MCDXLV", //1445
     },
     {
         name: "Maiko Dynasty",
-        year: "MDCLXIV",
+        year: "MDCLXIV", // 1664
     },
     {
         name: "Paul Dynasty",
-        year: "MCMXLIX",
+        year: "MCMXLIX", //1949
     },
     {
         name: "Andre Dynasty",
-        year: "MMMXICX",
+        year: "MMMXICX", //Invalid
     },
 ];
 
