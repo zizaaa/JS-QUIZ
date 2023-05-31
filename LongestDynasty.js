@@ -29,7 +29,6 @@ const dynastyReign = [
     },
 ];
 
-
 const longestDynasty = () => {
     if (dynastyReign.length === 0) {
         return "No Data";
@@ -69,21 +68,21 @@ const convertYear = (romanYear) => {
     };
 
     const regex = /^(M{0,3})(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/;
-    if (!regex.test(romanYear)) {
+    if (regex.test(romanYear)) {
         return "Invalid";
+    }else{
+        let year = 0;
+        for (let i = 0; i < romanYear.length; i++) {
+            const currentSymbol = romanYear[i];
+            const nextSymbol = romanYear[i + 1];
+                if (romanNumerals[currentSymbol] < romanNumerals[nextSymbol]) {
+                    year -= romanNumerals[currentSymbol];
+                } else {
+                    year += romanNumerals[currentSymbol];
+                }
+        }
+        return year;
     }
-
-    let year = 0;
-    for (let i = 0; i < romanYear.length; i++) {
-        const currentSymbol = romanYear[i];
-        const nextSymbol = romanYear[i + 1];
-            if (romanNumerals[currentSymbol] < romanNumerals[nextSymbol]) {
-                year -= romanNumerals[currentSymbol];
-            } else {
-                year += romanNumerals[currentSymbol];
-            }
-    }
-    return year;
 };
 
 console.log("Longest reigning dynasty:", longestDynasty());

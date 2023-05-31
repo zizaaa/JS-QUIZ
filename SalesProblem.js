@@ -8,19 +8,16 @@ const productProfitArray = [
 ];
 
     const topProduct=()=>{
-        let top = productProfitArray.reduce((prev,curr)=> curr.profit > prev.profit ? curr : prev)
-        console.log(`Top product = name: ${top.name}, profit: ${top.profit}`);
+        return productProfitArray.reduce((prev,curr)=> curr.profit > prev.profit ? curr : prev)
     };
-    topProduct();
+    console.log(topProduct());
 
     const bottomProduct=()=>{
-        let bottom = productProfitArray.reduce((prev,curr)=> curr.profit < prev.profit ? curr : prev)
-        console.log(`Bottom product = name: ${bottom.name}, profit: ${bottom.profit}`);
+        return productProfitArray.reduce((prev,curr)=> curr.profit < prev.profit ? curr : prev)
     };
-    bottomProduct();
+    console.log(bottomProduct());
 
     const zeroProfitProduct=()=>{
-        let zero = productProfitArray.reduce((prev,curr)=> Math.abs(curr.profit) < Math.abs(prev.profit) ? curr : prev)
-        console.log(`Zero Profit product = name: ${zero.name}, profit: ${zero.profit}`);
+        return productProfitArray.reduce((prev,curr)=> Math.abs(curr.profit) < Math.abs(prev.profit) ? curr : prev)
     };
-    zeroProfitProduct();
+    console.log(zeroProfitProduct());
