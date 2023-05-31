@@ -25,7 +25,7 @@ const dynastyReign = [
     },
     {
         name: "Andre Dynasty",
-        year: "MMXICX",
+        year: "MMMXICX",
     },
 ];
 
@@ -33,26 +33,27 @@ const longestDynasty = () => {
     if (dynastyReign.length === 0) {
         return "No Data";
     }
+    else{
+        let longestReign = 0;
+        let longestDynastyName = "";
 
-    let longestReign = 0;
-    let longestDynastyName = "";
+        dynastyReign.forEach((currentDynasty) => {
+            const endYear = convertYear(currentDynasty.year);
 
-    dynastyReign.forEach((currentDynasty) => {
-        const endYear = convertYear(currentDynasty.year);
+            if (endYear === "Invalid") {
+                return;
+            }
 
-        if (endYear === "Invalid") {
-            return;
-        }
+        const reignDuration = endYear - 1000;
 
-    const reignDuration = endYear - 1000;
+            if (reignDuration > longestReign) {
+                longestReign = reignDuration;
+                longestDynastyName = currentDynasty.name;
+            }
+        });
 
-        if (reignDuration > longestReign) {
-            longestReign = reignDuration;
-            longestDynastyName = currentDynasty.name;
-        }
-    });
-
-    return longestDynastyName;
+        return longestDynastyName;
+    }
 };
 
 
@@ -67,8 +68,9 @@ const convertYear = (romanYear) => {
         I: 1,
     };
 
-    const regex = /^(M{0,3})(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/;
-    if (regex.test(romanYear)) {
+    const regex =/^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/;
+
+    if (!regex.test(romanYear)) {
         return "Invalid";
     }else{
         let year = 0;
