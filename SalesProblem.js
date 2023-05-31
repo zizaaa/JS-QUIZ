@@ -1,8 +1,8 @@
 const productProfitArray = [
-    { name: "Product A", profit: -75 },
+    { name: "Product A", profit: 5 },
     { name: "Product B", profit: -70 },
     { name: "Product C", profit: 93 },
-    { name: "Product D", profit: 5 },
+    { name: "Product D", profit: -5 },
     { name: "Product E", profit: 88 },
     { name: "Product F", profit: 29 },
     { name: "Product G", profit: 93.1 }, //test

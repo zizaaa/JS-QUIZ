@@ -32,8 +32,7 @@ const dynastyReign = [
 const longestDynasty = () => {
     if (dynastyReign.length === 0) {
         return "No Data";
-    }
-    else{
+    }else{
         let longestReign = 0;
         let longestDynastyName = "";
 
